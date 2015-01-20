@@ -1,0 +1,81 @@
+/* 
+  File.strings
+  SuperIDSDK
+
+  Created by XU JUNJIE on 4/1/15.
+  Copyright (c) 2015 ISNC. All rights reserved.
+*/
+
+
+"Superid_Tips_UidNull" = "uid不能为空";
+"Superid_Tips_TokenNull" = "app_token、access_token不能为空";
+"Superid_Tips_InfoNull" = "info为空";
+"Superid_Title_Srvitem" = "一登服务协议";
+"Superid_Action_Edit" = "编辑";
+"Superid_Title_Auth" = "授权";
+"Superid_Tips_NetError" = "网络连接失败，请检查网络连通性";
+"Superid_Action_Retry" = "重试";
+"Superid_Action_Back" = "返回";
+"Superid_Tips_PicNotExist" = "图片不存在";
+"Superid_Action_Clip" = "裁剪";
+"Superid_Title_Editinfo" = "填写个人信息";
+"Superid_Action_TakeFromAlbum" = "从手机相册选择";
+"Superid_Action_TakePic" = "拍照";
+"Superid_Action_Cancel" = "取消";
+"Superid_Tips_TakePicError" = "发生意外，无法写入相册";
+"Superid_Tips_NameNull" = "请先填写昵称";
+"Superid_Action_SendCode" = "发送验证码";
+"Superid_Tips_AppTokenNull" = "缺少参数app_token";
+"Superid_Title_Login" = "一登刷脸登录";
+"Superid_Title_Bundle" = "一登人脸绑定";
+"Superid_Title_FaceInfo" = "一登人脸信息";
+"Superid_Tips_ActionNull" = "缺少参数action";
+"Superid_Tips_GetSuccess" = "获取成功";
+"Superid_Tips_LoginSuccess" = "登录成功";
+"Superid_Tips_ReScan" = "重刷一次";
+"Superid_Tips_LoginFail" = "登录失败";
+"Superid_Tips_CodeError" = "验证码有误";
+"Superid_Tips_MissingFace" = "当前人脸信息有误，请重试";
+"Superid_Aciton_ReBundle" = "重新绑定";
+"Superid_Tips_IdExist" = "此一登账号已被绑定";
+"Superid_Action_Sure" = "确定";
+"Superid_Tips_FaceCompareFail" = "人脸比对失败，请重试";
+"Superid_Tips_FirstStart" = "首次使用请输入短信验证码";
+"Superid_Tips_CodeOverLimit" = "验证码请求超过限制次数";
+"Superid_Aciton_ReSend" = "重新发送";
+"Superid_Action_CodeSend" = "已发送(%ds)";
+"Superid_Tips_SSLNotSafe" = "当前网络不安全";
+"Superid_Tips_CameraError" = "相机连接失败";
+"Superid_Title_AuthTipsTitle" = "授权信息";
+"Superid_Title_AuthTipsText" = "使用一登授权并登录：";
+"Superid_Tips_AuthTips" = "访问您的注册信息：头像、昵称。";
+"Superid_Action_MakeSureAuth" = "确定登录";
+"Superid_Tips_NickName" = "昵称";
+"Superid_Action_Save" = "保存";
+"Superid_Action_AgreeItem" = "我同意一登服务协议";
+"Superid_Tips_GuideError" = "您的人脸信息与此号码不匹配，请检查号码是否有误，无误请重刷一次";
+"Superid_Action_ChangePhone" = "切换账号";
+"Superid_Action_ReScan" = "重刷一次";
+"Superid_Tips_GuideErthree" = "您已多次登录失败，请留意当前的光线情况";
+"Superid_Action_ReBundleFace" = "重绑人脸";
+"Superid_Action_Exit" = "退出刷脸";
+"Superid_Title_Welcome" = "欢迎使用一登";
+"Superid_Tips_GuideStart" = "请您面对手机，保持正脸姿势，点击开始刷脸";
+"Superid_Action_StartScan" = "开始刷脸";
+"Superid_Tips_InputPhone" = "请输入手机号码";
+"Superid_Tips_InputPhoneTips" = "此号码将用于绑定您的人脸信息";
+"Superid_Tips_InputCode" = "请输入验证码";
+"Superid_Tips_NoLogin" = "尚未使用一登账号登录";
+"Superid_Tips_NoAuth" = "您尚未授权该应用，请先绑定授权";
+"Superid_Tips_AppTokenFail" = "获取app_token失败";
+"Superid_Tips_GuideLight" = "光线充⾜，您可以重新绑定⼈脸，并正常登录";
+"Superid_Tips_GuideDark" = "环境昏暗，建议您退出刷脸，使⽤其他⽅式登录";
+"Superid_Title_Country" = "国家和地区";
+"Superid_Tips_SaveSuccess" = "保存成功";
+"Superid_Tips_RequestCodeFail" = "验证码请求失败";
+"Superid_Tips_NoCamPermit_Title" = "无法启动相机";
+"Superid_Tips_NoCamPermit_Text" = "请手动开启相机权限：iPhone设置-隐私-相机-(%@)打开";
+"Superid_Action_NoCamPermit" = "我知道了";
+"Superid_Action_SrvitemDone" = "关闭";
+"Superid_Tips_TextOverLimit" = "输入字数超过限制";
+"Superid_Tips_NoFace" = "请您面对屏幕，将脸对准黄框";
