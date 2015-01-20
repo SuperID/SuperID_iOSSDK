@@ -343,9 +343,9 @@
                 
                 NSMutableDictionary *userInfo = [[NSMutableDictionary alloc]init];
                 
-                [userInfo setObject:@"xujunjie" forKey:@"name"];
-                [userInfo setObject:@"jasee.xu@gmail.com" forKey:@"email"];
-                [userInfo setObject:@"http://tp4.sinaimg.cn/1752808027/180/5700899275/1" forKey:@"avatar"];
+                [userInfo setObject:@"xxxx" forKey:@"name"];
+                [userInfo setObject:@"xxxxxx@xxxxx.com" forKey:@"email"];
+                [userInfo setObject:@"xxxxxxxxxxxxxxxx" forKey:@"avatar"];
                 NSDate *datenow = [NSDate date];
                 NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[datenow timeIntervalSince1970]];
                 
