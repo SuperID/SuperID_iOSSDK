@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0303EFCC1A72D43200E6EA9A /* libSuperIDSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0303EFCB1A72D43200E6EA9A /* libSuperIDSDK.a */; };
 		037363B01A6E4F2E0024ED43 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 037363AF1A6E4F2E0024ED43 /* main.m */; };
 		037363B31A6E4F2E0024ED43 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 037363B21A6E4F2E0024ED43 /* AppDelegate.m */; };
 		037363B91A6E4F2E0024ED43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 037363B71A6E4F2E0024ED43 /* Main.storyboard */; };
 		037363CA1A6E4F2E0024ED43 /* iOSDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 037363C91A6E4F2E0024ED43 /* iOSDemoTests.m */; };
-		037363D81A6E4F730024ED43 /* libSuperIDSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 037363D71A6E4F730024ED43 /* libSuperIDSDK.a */; };
 		037363DB1A6E4FA40024ED43 /* SuperIDSDKSettings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 037363DA1A6E4FA40024ED43 /* SuperIDSDKSettings.bundle */; };
 		037363DE1A6E50590024ED43 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 037363DD1A6E50590024ED43 /* Images.xcassets */; };
 		037363E51A6E50A00024ED43 /* DemoLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 037363E21A6E50A00024ED43 /* DemoLoginView.m */; };
@@ -34,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0303EFCB1A72D43200E6EA9A /* libSuperIDSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSuperIDSDK.a; path = SuperIDSDK/libSuperIDSDK.a; sourceTree = "<group>"; };
 		037363AA1A6E4F2E0024ED43 /* iOSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		037363AE1A6E4F2E0024ED43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		037363AF1A6E4F2E0024ED43 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -45,7 +46,6 @@
 		037363C91A6E4F2E0024ED43 /* iOSDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSDemoTests.m; sourceTree = "<group>"; };
 		037363D51A6E4F730024ED43 /* SuperIDFaceFeatureViewClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperIDFaceFeatureViewClass.h; sourceTree = "<group>"; };
 		037363D61A6E4F730024ED43 /* SuperIDSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperIDSDK.h; sourceTree = "<group>"; };
-		037363D71A6E4F730024ED43 /* libSuperIDSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSuperIDSDK.a; path = SuperIDSDK/libSuperIDSDK.a; sourceTree = "<group>"; };
 		037363DA1A6E4FA40024ED43 /* SuperIDSDKSettings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SuperIDSDKSettings.bundle; path = SuperIDSDK/SuperIDSDKSettings.bundle; sourceTree = "<group>"; };
 		037363DD1A6E50590024ED43 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		037363DF1A6E50750024ED43 /* CONFIG.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CONFIG.h; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				037363D81A6E4F730024ED43 /* libSuperIDSDK.a in Frameworks */,
+				0303EFCC1A72D43200E6EA9A /* libSuperIDSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,7 +174,7 @@
 		037363DC1A6E4FAD0024ED43 /* SuperIDSDK */ = {
 			isa = PBXGroup;
 			children = (
-				037363D71A6E4F730024ED43 /* libSuperIDSDK.a */,
+				0303EFCB1A72D43200E6EA9A /* libSuperIDSDK.a */,
 				037363DA1A6E4FA40024ED43 /* SuperIDSDKSettings.bundle */,
 				037363D31A6E4F730024ED43 /* include */,
 			);
