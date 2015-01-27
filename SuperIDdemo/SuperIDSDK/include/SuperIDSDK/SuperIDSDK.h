@@ -140,7 +140,8 @@ typedef enum {
  *
  *  @return SuperID LoginView object.
  */
--(id)obtainSuperIDLoginView:(NSError **)error;
+-(id)obtainSuperIDLoginViewWithmobilePhone:(NSString *)mobilePhone
+                                     error:(NSError **)error;
 
 
 /**

@@ -1,8 +1,8 @@
 /**
  * @file    SuperIDSDK.h
  * @author  XU Junjie
- * @version 20150119
- * @date    2015-01-19
+ * @version 20150127
+ * @date    2015-01-27
  *
  */
 
@@ -140,7 +140,8 @@ typedef enum {
  *
  *  @return SuperID LoginView object.
  */
--(id)obtainSuperIDLoginView:(NSError **)error;
+-(id)obtainSuperIDLoginViewWithmobilePhone:(NSString *)mobilePhone
+                                     error:(NSError **)error;
 
 
 /**

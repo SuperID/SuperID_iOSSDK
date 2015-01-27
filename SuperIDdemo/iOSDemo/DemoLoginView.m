@@ -123,7 +123,6 @@
     [clearBtn addTarget:self action:@selector(clearBtnEventHandle)forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:clearBtn];
 
-    
 }
 
 
@@ -160,7 +159,7 @@
 
     NSError *error = nil;
    
-    SuperIDLoginView=[SDK obtainSuperIDLoginView:&error];
+    SuperIDLoginView=[SDK obtainSuperIDLoginViewWithmobilePhone:nil error:&error];
     
     if (error) {
         
