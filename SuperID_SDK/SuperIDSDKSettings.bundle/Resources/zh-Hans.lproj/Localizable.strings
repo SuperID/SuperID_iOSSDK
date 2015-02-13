@@ -72,6 +72,7 @@
 "Superid_Tips_GuideDark" = "环境昏暗，建议您退出刷脸，使⽤其他⽅式登录";
 "Superid_Title_Country" = "国家和地区";
 "Superid_Tips_SaveSuccess" = "保存成功";
+
 "Superid_Tips_RequestCodeFail" = "验证码请求失败";
 "Superid_Tips_NoCamPermit_Title" = "无法启动相机";
 "Superid_Tips_NoCamPermit_Text" = "请手动开启相机权限：iPhone设置-隐私-相机-(%@)打开";
