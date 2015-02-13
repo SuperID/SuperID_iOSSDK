@@ -83,3 +83,29 @@
 "Superid_Action_SrvitemDone" = "Close";
 "Superid_Tips_TextOverLimit" = "The input text over limit";
 "Superid_Tips_NoFace" = "Please look at the screen";
+
+"Superid_Tips_GuideLock" = "Your current account has been blocked. Please kindly process the face recognition under the environment with sufficient light to unblock.";
+
+"Superid_Aciton_UnFreeze" = "Unblock";
+"Superid_Tips_UnFreezeSubmit" = "Submitted";
+"Superid_Tips_Auditing" = "Your account is unblocking. Please wait.";
+"Superid_Aciton_SecureEmail" = "set security mailbox";
+"Superid_Title_SecureEmail" = "security mailbox";
+"Superid_Tips_SecureEmailTextA" = "You can use mailbox to receive the notice of authorized log-in or re-binding the face and to block your account when necessary.";
+
+"Superid_Tips_SecureEmailTextB" = "The verification mail has been sent to your security mailbox, please kindly check it within 24 hours to confirm the set up.";
+
+"Superid_Tips_SecureEmailTextC" = "The security mailbox has been bound. You can block your account via the notification mail when necessary.";
+
+"Superid_Tips_ReSendEmail" = "Resend";
+"Superid_Aciton_CloseView" = "Close";
+"Superid_Aciton_Close" = "Close";
+"Superid_Aciton_NotReceivedEmail" = "No received?";
+"Superid_Tips_SecureEmailFail" = "The address format is wrong.";
+"Superid_Tips_SecureEmailWarn" = "Please kindly set your security mailbox to improve the security level.";
+"Superid_Aciton_Submit" = "Submit";
+"Superid_Aciton_ReSubmit" = "Re-Submit";
+"Superid_Tips_RequestFail" = "Network failure";
+"Superid_Tips_AccountHasBeenFrozen" = "Account has been blocked.";
+"Superid_Tips_SecureEmailTextTips" = "Cannot change once set up";
+"Superid_Aciton_AuthRevise" = "Check your authorization";

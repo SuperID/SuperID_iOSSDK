@@ -47,7 +47,7 @@
 "Superid_Tips_SSLNotSafe" = "当前网络不安全";
 "Superid_Tips_CameraError" = "相机连接失败";
 "Superid_Title_AuthTipsTitle" = "授权信息";
-"Superid_Title_AuthTipsText" = "使用一登授权并登录：";
+"Superid_Title_AuthTipsText" = "使用一登授权并登录";
 "Superid_Tips_AuthTips" = "访问您的注册信息：头像、昵称。";
 "Superid_Action_MakeSureAuth" = "确定登录";
 "Superid_Tips_NickName" = "昵称";
@@ -79,3 +79,25 @@
 "Superid_Action_SrvitemDone" = "关闭";
 "Superid_Tips_TextOverLimit" = "输入字数超过限制";
 "Superid_Tips_NoFace" = "请您面对屏幕，将脸对准黄框";
+
+"Superid_Tips_GuideLock" = "您当前帐号已被冻结，请在光线充足的环境下进行刷脸，申请解除冻结";
+"Superid_Aciton_UnFreeze" = "解除冻结";
+"Superid_Tips_UnFreezeSubmit" = "提交成功";
+"Superid_Tips_Auditing" = "帐号正解除冻结，请稍候";
+"Superid_Aciton_AuthRevise" = "查看或修改您的授权内容";
+"Superid_Aciton_SecureEmail" = "我的安全邮箱";
+"Superid_Title_SecureEmail" = "我的安全邮箱";
+"Superid_Tips_SecureEmailTextA" = "安全邮箱用于接收授权登录、重绑人脸的通知。如帐号发生异常，您可以在通知邮件中冻结帐号，保障帐号安全。";
+"Superid_Tips_SecureEmailTextB" = "已向您的安全邮箱发送验证邮件，请您在24小时内登录邮箱查看，并确认设置";
+"Superid_Tips_SecureEmailTextC" = "已成功绑定安全邮箱，如帐号发生异常，您可以在通知邮件中冻结帐号，保障帐号安全。";
+"Superid_Tips_ReSendEmail" = "检查邮箱地址并重新发送";
+"Superid_Aciton_CloseView" = "关闭窗口";
+"Superid_Aciton_Close" = "关闭";
+"Superid_Aciton_NotReceivedEmail" = "没有收到邮件?";
+"Superid_Tips_SecureEmailFail" = "邮箱填写有误";
+"Superid_Tips_SecureEmailWarn" = "请您设置安全邮箱，提高账号安全级别";
+"Superid_Aciton_Submit" = "提交";
+"Superid_Aciton_ReSubmit" = "重新提交";
+"Superid_Tips_RequestFail" = "网络请求失败";
+"Superid_Tips_AccountHasBeenFrozen" = "当前帐号已被冻结";
+"Superid_Tips_SecureEmailTextTips" = "安全邮箱设置后不能修改";
