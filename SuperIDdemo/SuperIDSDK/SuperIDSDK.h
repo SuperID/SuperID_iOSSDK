@@ -1,8 +1,8 @@
 /**
  * @file    SuperIDSDK.h
  * @author  XU Junjie
- * @version 20150211
- * @date    2015-02-11
+ * @version 20150308 V1.1
+ * @date    2015-03-08
  *
  */
 
@@ -223,5 +223,14 @@ typedef enum {
 -(BOOL)isAppOAuth;
 
 -(void)retryInitialSuperIDSDK;
+
+/**
+ *  user behaviours
+ */
+
+-(void)uploadUserBehavioursOfActionTag:(NSString *)tag attributes:(NSDictionary *)arrtributes actions:(NSDictionary *)actions;
+
+
+
 
 @end

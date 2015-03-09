@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0375357C1A88AE2500DF2AAB /* SuperIDSDKSettings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0375357A1A88AE2400DF2AAB /* SuperIDSDKSettings.bundle */; };
-		03AD1AF21A8B391C00C85B03 /* libSuperIDSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AD1AEF1A8B391C00C85B03 /* libSuperIDSDK.a */; };
 		03AD1AF91A8B552200C85B03 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AD1AF81A8B552200C85B03 /* libz.dylib */; };
 		03AD1AFB1A8B552B00C85B03 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AD1AFA1A8B552B00C85B03 /* libc++.dylib */; };
 		03AD1AFF1A8E541900C85B03 /* HideModeFaceFeatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AD1AFE1A8E541900C85B03 /* HideModeFaceFeatureView.m */; };
@@ -37,6 +36,7 @@
 		03BA12271A80D76F007D9366 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BA121C1A80D76F007D9366 /* AFURLRequestSerialization.m */; };
 		03BA12281A80D76F007D9366 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BA121E1A80D76F007D9366 /* AFURLResponseSerialization.m */; };
 		03BA12291A80D76F007D9366 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BA12201A80D76F007D9366 /* AFURLSessionManager.m */; };
+		03D33E531AAB7248004206F4 /* libSuperIDSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D33E501AAB7248004206F4 /* libSuperIDSDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,9 +51,6 @@
 
 /* Begin PBXFileReference section */
 		0375357A1A88AE2400DF2AAB /* SuperIDSDKSettings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SuperIDSDKSettings.bundle; sourceTree = "<group>"; };
-		03AD1AEF1A8B391C00C85B03 /* libSuperIDSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSuperIDSDK.a; sourceTree = "<group>"; };
-		03AD1AF01A8B391C00C85B03 /* SuperIDFaceFeatureViewClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperIDFaceFeatureViewClass.h; sourceTree = "<group>"; };
-		03AD1AF11A8B391C00C85B03 /* SuperIDSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperIDSDK.h; sourceTree = "<group>"; };
 		03AD1AF81A8B552200C85B03 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		03AD1AFA1A8B552B00C85B03 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		03AD1AFD1A8E541900C85B03 /* HideModeFaceFeatureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HideModeFaceFeatureView.h; sourceTree = "<group>"; };
@@ -109,6 +106,9 @@
 		03BA121E1A80D76F007D9366 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		03BA121F1A80D76F007D9366 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		03BA12201A80D76F007D9366 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		03D33E501AAB7248004206F4 /* libSuperIDSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSuperIDSDK.a; sourceTree = "<group>"; };
+		03D33E511AAB7248004206F4 /* SuperIDFaceFeatureViewClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperIDFaceFeatureViewClass.h; sourceTree = "<group>"; };
+		03D33E521AAB7248004206F4 /* SuperIDSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperIDSDK.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +118,7 @@
 			files = (
 				03AD1AFB1A8B552B00C85B03 /* libc++.dylib in Frameworks */,
 				03AD1AF91A8B552200C85B03 /* libz.dylib in Frameworks */,
-				03AD1AF21A8B391C00C85B03 /* libSuperIDSDK.a in Frameworks */,
+				03D33E531AAB7248004206F4 /* libSuperIDSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +219,9 @@
 		03BA11DD1A7F5CED007D9366 /* SuperIDSDK */ = {
 			isa = PBXGroup;
 			children = (
-				03AD1AEF1A8B391C00C85B03 /* libSuperIDSDK.a */,
-				03AD1AF01A8B391C00C85B03 /* SuperIDFaceFeatureViewClass.h */,
-				03AD1AF11A8B391C00C85B03 /* SuperIDSDK.h */,
+				03D33E501AAB7248004206F4 /* libSuperIDSDK.a */,
+				03D33E511AAB7248004206F4 /* SuperIDFaceFeatureViewClass.h */,
+				03D33E521AAB7248004206F4 /* SuperIDSDK.h */,
 				0375357A1A88AE2400DF2AAB /* SuperIDSDKSettings.bundle */,
 			);
 			path = SuperIDSDK;
