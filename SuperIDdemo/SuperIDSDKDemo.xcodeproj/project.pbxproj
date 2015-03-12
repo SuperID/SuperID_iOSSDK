@@ -10,8 +10,8 @@
 		0375357C1A88AE2500DF2AAB /* SuperIDSDKSettings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0375357A1A88AE2400DF2AAB /* SuperIDSDKSettings.bundle */; };
 		03AD1AF91A8B552200C85B03 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AD1AF81A8B552200C85B03 /* libz.dylib */; };
 		03AD1AFB1A8B552B00C85B03 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AD1AFA1A8B552B00C85B03 /* libc++.dylib */; };
-		03AD1AFF1A8E541900C85B03 /* HideModeFaceFeatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AD1AFE1A8E541900C85B03 /* HideModeFaceFeatureView.m */; };
-		03B997731A82605A005B8B46 /* faceFeatureListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B997721A82605A005B8B46 /* faceFeatureListView.m */; };
+		03AD1AFF1A8E541900C85B03 /* AdvancedFaceFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AD1AFE1A8E541900C85B03 /* AdvancedFaceFeatureViewController.m */; };
+		03B997731A82605A005B8B46 /* faceFeatureListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B997721A82605A005B8B46 /* faceFeatureListViewController.m */; };
 		03BA11B61A7F5C43007D9366 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BA11B51A7F5C43007D9366 /* main.m */; };
 		03BA11B91A7F5C43007D9366 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BA11B81A7F5C43007D9366 /* AppDelegate.m */; };
 		03BA11BC1A7F5C43007D9366 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BA11BB1A7F5C43007D9366 /* ViewController.m */; };
@@ -36,7 +36,7 @@
 		03BA12271A80D76F007D9366 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BA121C1A80D76F007D9366 /* AFURLRequestSerialization.m */; };
 		03BA12281A80D76F007D9366 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BA121E1A80D76F007D9366 /* AFURLResponseSerialization.m */; };
 		03BA12291A80D76F007D9366 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BA12201A80D76F007D9366 /* AFURLSessionManager.m */; };
-		03D33E531AAB7248004206F4 /* libSuperIDSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D33E501AAB7248004206F4 /* libSuperIDSDK.a */; };
+		03FA44F51AB15DDF00F8C0BF /* libSuperIDSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FA44F11AB15DDF00F8C0BF /* libSuperIDSDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,10 +53,10 @@
 		0375357A1A88AE2400DF2AAB /* SuperIDSDKSettings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SuperIDSDKSettings.bundle; sourceTree = "<group>"; };
 		03AD1AF81A8B552200C85B03 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		03AD1AFA1A8B552B00C85B03 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
-		03AD1AFD1A8E541900C85B03 /* HideModeFaceFeatureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HideModeFaceFeatureView.h; sourceTree = "<group>"; };
-		03AD1AFE1A8E541900C85B03 /* HideModeFaceFeatureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HideModeFaceFeatureView.m; sourceTree = "<group>"; };
-		03B997711A82605A005B8B46 /* faceFeatureListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = faceFeatureListView.h; sourceTree = "<group>"; };
-		03B997721A82605A005B8B46 /* faceFeatureListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = faceFeatureListView.m; sourceTree = "<group>"; };
+		03AD1AFD1A8E541900C85B03 /* AdvancedFaceFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvancedFaceFeatureViewController.h; sourceTree = "<group>"; };
+		03AD1AFE1A8E541900C85B03 /* AdvancedFaceFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvancedFaceFeatureViewController.m; sourceTree = "<group>"; };
+		03B997711A82605A005B8B46 /* faceFeatureListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = faceFeatureListViewController.h; sourceTree = "<group>"; };
+		03B997721A82605A005B8B46 /* faceFeatureListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = faceFeatureListViewController.m; sourceTree = "<group>"; };
 		03BA11B01A7F5C43007D9366 /* SuperIDSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperIDSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03BA11B41A7F5C43007D9366 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03BA11B51A7F5C43007D9366 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -106,9 +106,10 @@
 		03BA121E1A80D76F007D9366 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		03BA121F1A80D76F007D9366 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		03BA12201A80D76F007D9366 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
-		03D33E501AAB7248004206F4 /* libSuperIDSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSuperIDSDK.a; sourceTree = "<group>"; };
-		03D33E511AAB7248004206F4 /* SuperIDFaceFeatureViewClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperIDFaceFeatureViewClass.h; sourceTree = "<group>"; };
-		03D33E521AAB7248004206F4 /* SuperIDSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperIDSDK.h; sourceTree = "<group>"; };
+		03FA44F11AB15DDF00F8C0BF /* libSuperIDSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSuperIDSDK.a; sourceTree = "<group>"; };
+		03FA44F21AB15DDF00F8C0BF /* SIDFaceFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIDFaceFeatureViewController.h; sourceTree = "<group>"; };
+		03FA44F31AB15DDF00F8C0BF /* SuperID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperID.h; sourceTree = "<group>"; };
+		03FA44F41AB15DDF00F8C0BF /* SuperIDDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperIDDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +119,7 @@
 			files = (
 				03AD1AFB1A8B552B00C85B03 /* libc++.dylib in Frameworks */,
 				03AD1AF91A8B552200C85B03 /* libz.dylib in Frameworks */,
-				03D33E531AAB7248004206F4 /* libSuperIDSDK.a in Frameworks */,
+				03FA44F51AB15DDF00F8C0BF /* libSuperIDSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,10 +163,10 @@
 				03BA11EE1A7F7CDB007D9366 /* PersonalCenter.m */,
 				03BA11BA1A7F5C43007D9366 /* ViewController.h */,
 				03BA11BB1A7F5C43007D9366 /* ViewController.m */,
-				03B997711A82605A005B8B46 /* faceFeatureListView.h */,
-				03B997721A82605A005B8B46 /* faceFeatureListView.m */,
-				03AD1AFD1A8E541900C85B03 /* HideModeFaceFeatureView.h */,
-				03AD1AFE1A8E541900C85B03 /* HideModeFaceFeatureView.m */,
+				03B997711A82605A005B8B46 /* faceFeatureListViewController.h */,
+				03B997721A82605A005B8B46 /* faceFeatureListViewController.m */,
+				03AD1AFD1A8E541900C85B03 /* AdvancedFaceFeatureViewController.h */,
+				03AD1AFE1A8E541900C85B03 /* AdvancedFaceFeatureViewController.m */,
 				03BA11F71A803A11007D9366 /* Category */,
 				03BA11BD1A7F5C43007D9366 /* Main.storyboard */,
 				03BA11C01A7F5C43007D9366 /* Images.xcassets */,
@@ -219,9 +220,10 @@
 		03BA11DD1A7F5CED007D9366 /* SuperIDSDK */ = {
 			isa = PBXGroup;
 			children = (
-				03D33E501AAB7248004206F4 /* libSuperIDSDK.a */,
-				03D33E511AAB7248004206F4 /* SuperIDFaceFeatureViewClass.h */,
-				03D33E521AAB7248004206F4 /* SuperIDSDK.h */,
+				03FA44F11AB15DDF00F8C0BF /* libSuperIDSDK.a */,
+				03FA44F21AB15DDF00F8C0BF /* SIDFaceFeatureViewController.h */,
+				03FA44F31AB15DDF00F8C0BF /* SuperID.h */,
+				03FA44F41AB15DDF00F8C0BF /* SuperIDDelegate.h */,
 				0375357A1A88AE2400DF2AAB /* SuperIDSDKSettings.bundle */,
 			);
 			path = SuperIDSDK;
@@ -399,10 +401,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03AD1AFF1A8E541900C85B03 /* HideModeFaceFeatureView.m in Sources */,
+				03AD1AFF1A8E541900C85B03 /* AdvancedFaceFeatureViewController.m in Sources */,
 				03BA12211A80D76F007D9366 /* AFHTTPRequestOperation.m in Sources */,
 				03BA11BC1A7F5C43007D9366 /* ViewController.m in Sources */,
-				03B997731A82605A005B8B46 /* faceFeatureListView.m in Sources */,
+				03B997731A82605A005B8B46 /* faceFeatureListViewController.m in Sources */,
 				03BA120B1A80D07F007D9366 /* PAImageView.m in Sources */,
 				03BA11EC1A7F6250007D9366 /* PubFunctions.m in Sources */,
 				03BA11B91A7F5C43007D9366 /* AppDelegate.m in Sources */,

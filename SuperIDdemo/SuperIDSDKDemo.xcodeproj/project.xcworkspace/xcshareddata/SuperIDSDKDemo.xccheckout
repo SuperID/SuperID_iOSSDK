@@ -10,31 +10,31 @@
 	<string>SuperIDSDKDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>1C58062BBC0248C0595DB58D67AB2A921FDE1036</key>
-		<string>github.com:SuperID/SuperID_iOSSDK.git</string>
+		<key>E0C7202002FCB6369FD8A73D3985809CFEA6F05C</key>
+		<string>ssh://git.isncer.com:2345/facesdk/iosdemo.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SuperIDdemo/SuperIDSDKDemo.xcodeproj</string>
+	<string>SuperIDSDKDemo.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>1C58062BBC0248C0595DB58D67AB2A921FDE1036</key>
-		<string>../../..</string>
+		<key>E0C7202002FCB6369FD8A73D3985809CFEA6F05C</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>github.com:SuperID/SuperID_iOSSDK.git</string>
+	<string>ssh://git.isncer.com:2345/facesdk/iosdemo.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>1C58062BBC0248C0595DB58D67AB2A921FDE1036</string>
+	<string>E0C7202002FCB6369FD8A73D3985809CFEA6F05C</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>1C58062BBC0248C0595DB58D67AB2A921FDE1036</string>
+			<string>E0C7202002FCB6369FD8A73D3985809CFEA6F05C</string>
 			<key>IDESourceControlWCCName</key>
-			<string>SuperID_iOSSDK</string>
+			<string>SuperIDSDKiOSdemo</string>
 		</dict>
 	</array>
 </dict>

@@ -7,7 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "SuperIDSDK.h"
+#import "SuperID.h"
+
+#define SIDAPPID        @"nnxEVFmKxMzxQJeV1RJ1BmMv"
+#define SIDAPPSECRET    @"Fx1D7DUmCbKqIvaLYv1c7MUP"
 
 @interface AppDelegate ()
 
@@ -17,11 +20,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [[SuperIDSDK sharedInstance]InitWithCredentialsAppID:@"OjMckn4xzHP1xdpf0uGJSgWj"
-                                               AppSecret:@"OjMckn4xzHP1xdpf0uGJSasd"];
-    
-    [SuperIDSDK SuperIDSDKLanguageMode:autoMode];
-    [[SuperIDSDK sharedInstance]SuperIDSDKDebugMode:YES];
+    [[SuperID sharedInstance]registerAppWithAppID:SIDAPPID withAppSecret:SIDAPPSECRET];
+    [SuperID setLanguageMode:SIDAutoMode];
+    [[SuperID sharedInstance]setDebugMode:YES];
 
     return YES;
 }

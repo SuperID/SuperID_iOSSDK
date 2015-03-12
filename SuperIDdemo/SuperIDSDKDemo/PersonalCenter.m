@@ -12,23 +12,25 @@
 #import "MainCell.h"
 #import "logoutCell.h"
 #import "PubFunctions.h"
-#import "SuperIDSDK.h"
+#import "SuperID.h"                             //声明一登头文件
 #import "MBProgressHUD.h"
-#import "faceFeatureListView.h"
-#import "HideModeFaceFeatureView.h"
+#import "faceFeatureListViewController.h"
+#import "AdvancedFaceFeatureViewController.h"
 
-//声明当前VC继承SuperIDSDK的委托
-
-@interface PersonalCenter()<SuperIDSDKDelegate>{
+/**
+ *  声明SuperIDDelegate协议引用
+ */
+@interface PersonalCenter()<SuperIDDelegate>{
     
     NSArray     *iconArray;
     NSArray     *nameArray;
     NSArray     *functionArray;
-    SuperIDSDK  *SDK;
+    SuperID     *superIdSdk;
 }
 
 @end
 
+//   ************************************************************
 
 //   当用户修改了app的个人资料以后，请调用此接口进行资料上传更新。
 //    NSMutableDictionary *userInfo = [[NSMutableDictionary alloc]init];
@@ -40,7 +42,15 @@
 //
 //    [SDK updateAppUserInfoToSuperIDAccount:userInfo];/**
 
+//   ************************************************************
 
+//   ************************************************************
+//
+//   当用户完成授权操作或者进入用户个人授权页面时，开发者需查询用户授权状态用
+//   于更新UI界面和切换绑定、解绑操作。方法如下
+//   - (void)queryCurrentUserAuthorizationStateWithUid:(NSString *)uid;
+//
+//   ************************************************************
 
 @implementation PersonalCenter
 
@@ -73,9 +83,11 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     
-    SDK = [SuperIDSDK sharedInstance];
-    SDK.delegate = self;
-    [[UIApplication sharedApplication] setStatusBarHidden:NO];
+     [[UIApplication sharedApplication] setStatusBarHidden:NO];
+    
+    superIdSdk = [SuperID sharedInstance];  //获取SDK单例；
+    superIdSdk.delegate = self;             //设置SDK的委托对象
+   
     
     
     
@@ -193,6 +205,7 @@
         
         if (indexPath.row == 1) {
             
+            //此处通过查询用户与一登账号授权状态切换UI界面。开发者需调用Uid查询接口，在实现SuperID协议的方法中根据状态reloadTableView
             if ([self userIsAouth]) {
                 
                 cell.bundleLable.text = @"解除绑定";
@@ -238,26 +251,26 @@
         
         if ([self userIsAouth]) {
             
-            [[SuperIDSDK sharedInstance] superIDUserCancelTheAuthorization];
+            [[SuperID sharedInstance] userCancelAuthorization];
             
         }else{
             
-           //采用present方式弹出授权绑定页面：
+           //生成用户个人账户信息的字典：其中key：name，email，avatar这三项需跟demo所示一致：
             NSMutableDictionary *userInfo = [[NSMutableDictionary alloc]initWithObjectsAndKeys:@"xxx",@"name",@"xxxx@gmail.com",@"email",@"http://xxxxxx",@"avatar", nil];
-            //此处采用时间戳作为替代UID，以做DEMO示例
+            
+            //调用授权绑定的VC需传入用户的账号Uid，由于Demo无独立的三方账号体系，采用随机的时间戳作为Uid做Demo示例用。
             NSDate *datenow = [NSDate date];
             NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[datenow timeIntervalSince1970]];
             NSError *error = nil;
-//            开发者应当如下使用（如果手机号码为空，置为nil）：
-//            id SuperIDOAuthView = [[SuperIDSDK sharedInstance] obtainSuperIDOAuthViewWithAppUid:@"用户的AppUid"
-//                                                                                    MobliePhone:@“用户的手机号码” userAppInfo:@“用户的App个人信息” error:&error];
             
-            id SuperIDOAuthView = [[SuperIDSDK sharedInstance] obtainSuperIDOAuthViewWithAppUid:timeSp
-                                                                                         MobliePhone:nil userAppInfo:nil error:&error];
-                
-            if (SuperIDOAuthView) {
+//            开发者应当如下使用（如果手机号码为空，置为nil）：
+//            id SIDAuthViewController = [[SuperID sharedInstance]obtainAuthViewControllerWithUid:@"用户的AppUid" phoneNumber:@“用户的手机号码” appUserInfo:@"用户的应用账户信息" error:&error];
+            
+            id SIDAuthViewController = [[SuperID sharedInstance]obtainAuthViewControllerWithUid:timeSp phoneNumber:nil appUserInfo:nil error:&error];
+            
+            if (SIDAuthViewController) {
                     
-                [self presentViewController:SuperIDOAuthView animated:YES completion:nil];
+                [self presentViewController:SIDAuthViewController animated:YES completion:nil];
                     
             }else{
                     
@@ -272,16 +285,17 @@
             //采用present的方式弹出人脸情绪的功能：
             NSError *error = nil;
             
-            id emotionView = [[SuperIDSDK sharedInstance]obtainSuperIDFaceFeatureViewWithPreview:&error];
+            id SIDEmotionViewController = [[SuperID sharedInstance]obtainFaceFeatureViewControllerWithError:&error];
             
             
-            if (emotionView) {
+            if (SIDEmotionViewController) {
                 
-                [self presentViewController:emotionView animated:YES completion:nil];
+                [self presentViewController:SIDEmotionViewController animated:YES completion:nil];
                 
             }else{
                 
                 NSLog(@"loginView Error =%ld,%@",(long)[error code],[error localizedDescription]);
+                
                 //授权过期或者用户已经解除绑定
                 MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                 hud.mode = MBProgressHUDModeText;
@@ -293,16 +307,13 @@
         }else if (indexPath.row == 1){
         
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            HideModeFaceFeatureView *faceFeatureView = [storyboard instantiateViewControllerWithIdentifier:@"hideModeFaceFeatureView"];
-            [self presentViewController:faceFeatureView animated:YES completion:nil];
+            AdvancedFaceFeatureViewController *AdvancedFaceFeatureViewController = [storyboard instantiateViewControllerWithIdentifier:@"advancedFaceFeatureView"];
+            [self presentViewController:AdvancedFaceFeatureViewController animated:YES completion:nil];
         }
         
         
     }else if (indexPath.section == 3) {
-        
-        //当app执行退出账号操作时，您需要执行以下方法，以清楚SuperID SDK内的缓存信息。
-        // [[SuperIDSDK sharedInstance]logoutSuperIDAccountInApp];
-        
+
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"是否退出当前账号" message:nil delegate:self cancelButtonTitle:@"返回" otherButtonTitles:@"确定", nil];
         
         alert.delegate = self;
@@ -318,7 +329,7 @@
 -(BOOL)userIsAouth{
     
     //由于demo无法提供完善的三方账号体系作为流程演示，在使用授权接口是采用随机时间戳作为替代，因此在检测user 授权状态时，在demo内使用改接口 isAppAouth.
-    return [[SuperIDSDK sharedInstance]isAppOAuth];
+    return [[SuperID sharedInstance]isAppAuth];
     
     //在实际使用中，您应当使用如下接口：
     //-(void)checkUserAouthrizedStateWithUid:(NSString *)uid; 传入当前用户在您APP内的uid，检测该uid是否已经被SuperID账号授权。
@@ -327,103 +338,170 @@
 
 #pragma mark - SuperIDSDK Delegate methods
 
-//用户解绑成功提醒操作：
--(void)userCancelOAuthWithSuperIDSuccess{
+//用户完成一登授权绑定操作的回调方法
+- (void)superID:(SuperID *)sender userDidFinishAuthAppWithUserInfo:(NSDictionary *)userInfo withAppUid:(NSString *)uid error:(NSError *)error{
     
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeText;
-    hud.labelText = @"解绑成功";
-    hud.removeFromSuperViewOnHide = YES;
-    [hud hide:YES afterDelay:0.8];
-    [self.tableView reloadData];
-    NSLog(@"SuperIDSDK:userCancelAouthWithSuperIDSuccess");
-}
-
-//用户解绑失败提醒操作：
--(void)userCancelOAuthWithSuperIDFail{
-    
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeText;
-    hud.labelText = @"解绑失败";
-    hud.removeFromSuperViewOnHide = YES;
-    [hud hide:YES afterDelay:0.8];
-    NSLog(@"SuperIDSDK:userCancelOAuthWithSuperIDFail");
-}
-
-//用户授权绑定成功后的方法回调
--(void)userDidFinishOAuthAppWithSuperID:(NSDictionary *)superIDUserInfo andAppUID:(NSString *)appUid{
-    
-    NSMutableDictionary *temp = [[NSMutableDictionary alloc]initWithDictionary:superIDUserInfo];
-    self.appUserInfo = temp;
-    NSUserDefaults *userSettings = [NSUserDefaults standardUserDefaults];
-    [userSettings setObject:superIDUserInfo forKey: @"appUserInfo"];
-
-    [self.tableView reloadData];
-}
-
-//用户授权绑定失败后的方法回调
--(void)userOAuthAppWithSuperIDFail:(NSError *)error{
-    
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeText;
-    hud.labelText = @"绑定失败";
-    hud.removeFromSuperViewOnHide = YES;
-    [hud hide:YES afterDelay:0.8];
-
-    NSLog(@"superid SDK:userAouthAppWithSuperIDFail");
-}
-
-//获取人脸信息成功回调
--(void)getSuperIDUserFaceFeatureSuccess:(NSDictionary *)featureData{
-    
-    if (featureData) {
+    if (!error) {
         
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        faceFeatureListView *personView= [storyboard instantiateViewControllerWithIdentifier:@"faceFeatureList"];
-         [[NSUserDefaults standardUserDefaults]setObject:[PubFunctions filterFaceFeaturesData:featureData] forKey:@"FaceFeature"];
-        [self.navigationController pushViewController:personView animated:NO];
+        //用户授权绑定成功后的执行内容
+        NSMutableDictionary *temp = [[NSMutableDictionary alloc]initWithDictionary:userInfo];
+        self.appUserInfo = temp;
+        NSUserDefaults *userSettings = [NSUserDefaults standardUserDefaults];
+        [userSettings setObject:userInfo forKey: @"appUserInfo"];
         
+        [self.tableView reloadData];
+        
+    }else{
+        
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"绑定失败";
+        hud.removeFromSuperViewOnHide = YES;
+        [hud hide:YES afterDelay:0.8];
     }
 }
 
-//获取人脸信息失败回调
--(void)getSuperIDUserFaceFeatureFail:(NSError *)error{
+//用户完成一登账号取消绑定授权操作完成的回调方法
+- (void)superID:(SuperID *)sender userDidFinishCancelAuthorization:(NSError *)error{
     
-    if ([error code]==-1007) {
+    if (!error) {
         
+        //解除绑定授权成功
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode = MBProgressHUDModeText;
-        hud.labelText = @"请先绑定一登";
+        hud.labelText = @"解绑成功";
         hud.removeFromSuperViewOnHide = YES;
         [hud hide:YES afterDelay:0.8];
-        NSLog(@"getSuperIDUserEmotionAndFaceFeatureFail");
+        [self.tableView reloadData];
         
-    }else if ([error code]==-1005){
+    }else{
         
+        //解除绑定授权失败
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode = MBProgressHUDModeText;
-        hud.labelText = @"帐号已被冻结";
+        hud.labelText = @"解绑失败";
         hud.removeFromSuperViewOnHide = YES;
         [hud hide:YES afterDelay:0.8];
-        NSLog(@"userAccountHasBeenFrozen");
-        
-    }else if ([error code] ==-1016){
-        
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hud.mode = MBProgressHUDModeText;
-        hud.labelText = @"获取人脸信息失败";
-        hud.removeFromSuperViewOnHide = YES;
-        [hud hide:YES afterDelay:0.8];
-        NSLog(@"getSuperIDUserEmotionAndFaceFeatureFail");
-        
     }
-    
 }
 
+//用户完成获取人脸信息操作的回调方法
+- (void)superID:(SuperID *)sender userDidFinishGetFaceFeatureWithFeatureInfo:(NSDictionary *)featureInfo error:(NSError *)error{
+    
+    if (!error) {
+        
+        //获取人脸信息成功
+        if (featureInfo) {
+            
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            faceFeatureListViewController *personView= [storyboard instantiateViewControllerWithIdentifier:@"faceFeatureList"];
+            [[NSUserDefaults standardUserDefaults]setObject:[PubFunctions filterFaceFeaturesData:featureInfo] forKey:@"FaceFeature"];
+            [self.navigationController pushViewController:personView animated:NO];
+            
+        }
+        
+    }else{
+        
+        //获取人脸信息失败，开发者统一做获取失败的处理。也可根据开发者文档的错误信息描述进行不同的操作处理。
+        if ([error code]==-1007) {
+            
+            //用户尚未使用一登账号登录或绑定授权一等账号，因此无法获取人脸信息，开发者可建议用户执行一登账号绑定或登录操作
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            hud.mode = MBProgressHUDModeText;
+            hud.labelText = @"请先绑定一登";
+            hud.removeFromSuperViewOnHide = YES;
+            [hud hide:YES afterDelay:0.8];
+            
+        }else if ([error code]==-1005){
+            
+            //用户的一登账号由于安全问题，用户选择冻结其一登账号，此情况下无法进行获取人脸信息操作。
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            hud.mode = MBProgressHUDModeText;
+            hud.labelText = @"帐号已被冻结";
+            hud.removeFromSuperViewOnHide = YES;
+            [hud hide:YES afterDelay:0.8];
+            
+        }else if ([error code] ==-1016){
+            
+            //由于用户手机网络连接问题、服务器异常等情况，出现的获取人脸信息失败。
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            hud.mode = MBProgressHUDModeText;
+            hud.labelText = @"获取人脸信息失败";
+            hud.removeFromSuperViewOnHide = YES;
+            [hud hide:YES afterDelay:0.8];
+        }
+    }
+}
+
+//查询用户当前授权状态接口的回调方法，开发者根据如下情况进行不同操作
+-(void)superID:(SuperID *)sender queryCurrentUserAuthorizationStateResponse:(SIDUserAuthorizationState)state{
+    
+    if (state == SIDUserHasAuth) {
+        
+        //当前用户Uid已授权APP
+        
+    }else if (state == SIDUserNoAuth){
+        
+        //当前用户Uid未授权绑定APP
+        
+    }else if (state == SIDQueryUserAuthorizationFail ){
+        
+        //查询用户Uid授权状态失败，如出现网络问题
+    }
+}
+
+
+//更新应用的用户Uid一登账号中的回调方法
+- (void)superID:(SuperID *)sender updateAppUserInfoStateResponse:(SIDUserUpdateResponseState)state{
+    
+    if (state == SIDUpdateUserInfoSucceed) {
+        
+        //更新用户应用账号信息操作成功
+        
+    }else if (state == SIDUpdateAppUserInfoFail){
+        
+        //更新用户应用账号信息操作失败，如出现网络问题
+        
+    }else if (state == SIDUserAccessExpired){
+        
+        //用户长时间不使用App，导致Token失效。出现概率低。出现该情况开发者可建议用户重新使用一登登录登录一次即可。
+        
+    }else if (state == SIDUserNoAuthToSuperID){
+        
+        //当前用户并为使用一登登录或者授权绑定一登账号，无法更新用户个人账号信息到一登账号中，出现该情况开发者可建议用户使用一登登录或一登授权绑定。
+    }
+}
+
+//
+-(void)superID:(SuperID *)sender updateAppUidResponse:(SIDUserUpdateResponseState)state{
+    
+    if (state == SIDUpdateAppUidSucceed) {
+        
+        //更新用户Uid操作成功
+        
+    }else if (state == SIDUidHasExist){
+        
+        //当前用户Uid已绑定其他一登账号。因此无法更新
+        
+    }else if (state == SIDUserNoAuthToSuperID){
+        
+        //当前用户并为使用一登登录或者授权绑定一登账号，无法更新Uid到一登账号中，出现该情况开发者可建议用户使用一登登录或一登授权绑定。
+        
+    }else if (state == SIDUserAccessExpired){
+        
+        //用户长时间不使用App，导致Token失效。出现概率低。出现该情况开发者可建议用户重新使用一登登录登录一次即可。
+        
+    }else if (state == SIDUpdateAppUidFail){
+        
+        //更新用户Uid操作失败，如出现网络问题
+    }
+}
+
+#pragma mark - Notification
 -(void)finshGetFaceFeatureNoPreviewMode:(NSNotification*)notification{
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    faceFeatureListView *personView= [storyboard instantiateViewControllerWithIdentifier:@"faceFeatureList"];
+    faceFeatureListViewController *personView= [storyboard instantiateViewControllerWithIdentifier:@"faceFeatureList"];
     [self.navigationController pushViewController:personView animated:NO];
 }
 
@@ -433,6 +511,8 @@
     
     if (alertView.tag == 1 && buttonIndex == 1) {
 
+        //当app执行退出账号操作时，您需要执行以下方法，以清楚SuperID SDK内的缓存信息。
+         [[SuperID sharedInstance]appUserLogoutCurrentAccount];
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
