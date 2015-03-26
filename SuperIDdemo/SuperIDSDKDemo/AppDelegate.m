@@ -22,7 +22,7 @@
     
     [[SuperID sharedInstance]registerAppWithAppID:SIDAPPID withAppSecret:SIDAPPSECRET];
     [SuperID setLanguageMode:SIDAutoMode];
-    [[SuperID sharedInstance]setDebugMode:YES];
+    [SuperID setDebugMode:YES];
 
     return YES;
 }

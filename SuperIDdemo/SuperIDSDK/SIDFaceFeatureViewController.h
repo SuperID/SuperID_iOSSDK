@@ -23,7 +23,7 @@
  *
  *  @return 初始化成功返回YES,失败返回NO
  */
-- (BOOL)initFaceFeatureViewWithDuration:(float)duration withFrameWidth:(float)width hight:(float)hight;
+- (BOOL)configureFaceFeatureViewWithDuration:(float)duration withFrameWidth:(float)width high:(float)high;
 
 
 /**

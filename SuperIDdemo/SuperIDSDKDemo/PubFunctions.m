@@ -32,7 +32,7 @@
     return border;
 }
 
-+(void *)intialTextField:(UITextField *)textField{
++ (void *)intialTextField:(UITextField *)textField{
     
     textField.backgroundColor=[UIColor whiteColor];
     textField.keyboardAppearance=UIKeyboardAppearanceLight;
@@ -48,7 +48,7 @@
     return nil;
 }
 
-+(NSDictionary *)filterFaceFeaturesData:(NSDictionary *)originalData{
++ (NSDictionary *)filterAdvancedFaceFeaturesData:(NSDictionary *)originalData{
     
     NSMutableDictionary *faceFeatureDitionary = [[NSMutableDictionary alloc]init];
     NSString *gender;
@@ -56,7 +56,9 @@
     if ([ageNumber isEqualToNumber:@1]) {
         
         gender = @"男";
+        
     }else{
+        
         gender = @"女";
         
     }
@@ -136,7 +138,7 @@
 }
 
 
-+(void)setupLoginViewUIDisplay:(UIViewController *)vc{
++ (void)setupLoginViewUIDisplay:(UIViewController *)vc{
     
     vc.view.backgroundColor = Superid_Demo_Artboard;
     vc.navigationItem.title=@"一登Demo";

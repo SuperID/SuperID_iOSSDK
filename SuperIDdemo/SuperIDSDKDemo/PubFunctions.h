@@ -12,9 +12,9 @@
 
 + (void)setExtraCellLineHidden: (UITableView *)tableView;
 + (CALayer *)AddBorderLayer:(UIColor *)borderColor withWidth:(float)width onY:(float)pointY;
-+(void)setupLoginViewUIDisplay:(UIViewController *)vc;
-+(void *)intialTextField:(UITextField *)textField;
-+(NSDictionary *)filterFaceFeaturesData:(NSDictionary *)originalData;
++ (void)setupLoginViewUIDisplay:(UIViewController *)vc;
++ (void *)intialTextField:(UITextField *)textField;
++ (NSDictionary *)filterAdvancedFaceFeaturesData:(NSDictionary *)originalData;
 + (UIImage *)blurryImage:(UIImage *)image withBlurLevel:(CGFloat)blur;
 
 @end

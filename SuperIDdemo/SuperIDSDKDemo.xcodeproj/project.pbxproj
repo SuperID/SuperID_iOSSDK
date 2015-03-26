@@ -167,6 +167,8 @@
 				03B997721A82605A005B8B46 /* faceFeatureListViewController.m */,
 				03AD1AFD1A8E541900C85B03 /* AdvancedFaceFeatureViewController.h */,
 				03AD1AFE1A8E541900C85B03 /* AdvancedFaceFeatureViewController.m */,
+				03BA11EA1A7F6250007D9366 /* PubFunctions.h */,
+				03BA11EB1A7F6250007D9366 /* PubFunctions.m */,
 				03BA11F71A803A11007D9366 /* Category */,
 				03BA11BD1A7F5C43007D9366 /* Main.storyboard */,
 				03BA11C01A7F5C43007D9366 /* Images.xcassets */,
@@ -179,8 +181,6 @@
 		03BA11B31A7F5C43007D9366 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				03BA11EA1A7F6250007D9366 /* PubFunctions.h */,
-				03BA11EB1A7F6250007D9366 /* PubFunctions.m */,
 				03BA11E91A7F5E0E007D9366 /* CONFIG.h */,
 				03BA11B41A7F5C43007D9366 /* Info.plist */,
 				03BA11B51A7F5C43007D9366 /* main.m */,

@@ -57,7 +57,7 @@
 "Superid_Tips_NickName" = "Name";
 "Superid_Action_Save" = "Submit";
 "Superid_Action_AgreeItem" = "I agree the privacy policy";
-"Superid_Tips_GuideError" = "Sorry, we fail to virify your face. Make sure this is the mobile number of your SuperID. If not error, try again";
+"Superid_Tips_GuideError" = "Fail to login. Make sure the above number is your SuperID. if dark condition, double tap to open the highlight mode when scanning face.";
 "Superid_Action_ChangePhone" = "Change account";
 "Superid_Action_ReScan" = "Retry";
 "Superid_Tips_GuideErthree" = "You have failed to login over 3 times, for proper acquisition, you should always enroll in the best lighting conditions";
@@ -109,3 +109,4 @@
 "Superid_Tips_AccountHasBeenFrozen" = "Account has been blocked.";
 "Superid_Tips_SecureEmailTextTips" = "Cannot change once set up";
 "Superid_Aciton_AuthRevise" = "Check your authorization";
+"Superid_Tips_NightMode" = "Double click to highlight";

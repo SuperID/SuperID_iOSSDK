@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hh3-7W-wbY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hh3-7W-wbY">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -544,7 +544,7 @@
     </scenes>
     <resources>
         <image name="superid_closeBtn_Pressed" width="76" height="76"/>
-        <image name="superid_demo_binding_superid_ico_normal" width="48" height="49"/>
+        <image name="superid_demo_binding_superid_ico_normal" width="48" height="50"/>
         <image name="superid_demo_binding_wechat_ico_normal" width="48" height="49"/>
         <image name="superid_demo_binding_weibo_ico_normal" width="48" height="50"/>
     </resources>

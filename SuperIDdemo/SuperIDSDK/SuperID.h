@@ -39,7 +39,7 @@
  *
  *  @return SuperID单例对象
  */
-- (instancetype)registerAppWithAppID:(NSString *)appID withAppSecret:(NSString *)appSecret;
+- (void)registerAppWithAppID:(NSString *)appID withAppSecret:(NSString *)appSecret;
 
 
 
@@ -57,7 +57,7 @@
  *  建议开发者在Debug模式下开启调试模式，在Release前关闭该模式。
  *  @param flag 当该值为"YES",SDK将打印对应的调试Log用于提示开发者。当该值为“NO”,关闭SDK内部的Log输出。
  */
-- (void)setDebugMode:(BOOL)flag;
++ (void)setDebugMode:(BOOL)flag;
 
 
 /**
@@ -78,7 +78,7 @@
  *
  *  @return SuperID登录VC的实例
  */
-- (instancetype)obtainLoginViewControllerWithPhoneNumber:(NSString *)phoneNumber Error:(NSError **)error;
+- (instancetype)obtainLoginViewControllerWithPhoneNumber:(NSString *)phoneNumber error:(NSError **)error;
 
 
 /**
@@ -99,6 +99,7 @@
  *
  *  @return SuperID授权VC的实例
  */
+
 - (instancetype)obtainAuthViewControllerWithUid:(NSString *)uid phoneNumber:(NSString *)phoneNumber appUserInfo:(NSDictionary *)userInfo error:(NSError **)error;
 
 
@@ -145,13 +146,13 @@
  *  开发者应调用接口：- (void)queryCurrentUserAuthorizationStateWithUid:(NSString *)uid;
  *  @return 授权返回YES, 未授权返回NO.
  */
--(BOOL)isAppAuth;
+- (BOOL)isAppAuth;
 
 
 /**
  *  当应用启动处于无网络状态下启动时，重新连接网络时可调用改接口重新初始化SuperID的SDK。
  */
--(void)retryInitialSuperIDSDK;
+- (void)retryInitialSuperIDSDK;
 
 
 
@@ -163,6 +164,8 @@
  *  @param actions    该事件的用户操作字典：如：收藏、分享、删除等操作记录。
  */
 - (void)uploadUserBehaviourEventDataWithActionTag:(NSString *)aTag attributes:(NSDictionary *)attributes actions:(NSDictionary *)actions;
+
+
 
 
 @end

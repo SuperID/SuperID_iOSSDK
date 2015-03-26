@@ -44,7 +44,7 @@
     
     [PubFunctions setExtraCellLineHidden:self.tableView];
     
-    BundingArray = [[NSMutableArray alloc]initWithObjects:@"性别",@"年龄",@"情绪",@"颜值",@"眼镜", @"太阳镜",@"微笑值",@"胡须密度",@"嘴巴张开度",@"嘴巴闭合度",nil];
+    BundingArray = [[NSMutableArray alloc]initWithObjects:@"眼镜",@"性别",@"微笑",nil];
 
 }
 
@@ -58,7 +58,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 10;
+    return self.faceFeatureDitionary.count;
     
 }
 
@@ -91,45 +91,39 @@
     switch (indexPath.row) {
         case 0:
             
-            cell.detailTextLabel.text = [self.faceFeatureDitionary objectForKey:GENDER];
+            if ([[self.faceFeatureDitionary objectForKey:@"Eyeglasses"]boolValue] == YES) {
+                
+                cell.detailTextLabel.text = @"有戴";
+                
+            }else{
+                
+                cell.detailTextLabel.text = @"没戴";
+            }
+            
             break;
         case 1:
             
-            cell.detailTextLabel.text = [self.faceFeatureDitionary objectForKey:AGE];
+            if ([[self.faceFeatureDitionary objectForKey:@"Male"]boolValue] == YES) {
+                
+                cell.detailTextLabel.text = @"男";
+                
+            }else{
+                
+                cell.detailTextLabel.text = @"女";
+            }
+            
             break;
         case 2:
             
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@%@",[self.faceFeatureDitionary objectForKey:EMOTION],[self.faceFeatureDitionary objectForKey:EMOTIONVALUE]];
+            if ([[self.faceFeatureDitionary objectForKey:@"Smiling"]boolValue] == YES) {
+                
+                cell.detailTextLabel.text = @"有";
+                
+            }else{
+                
+                cell.detailTextLabel.text = @"无";
+            }
             break;
-        case 3:
-            
-            cell.detailTextLabel.text = [self.faceFeatureDitionary objectForKey:BEAUTY];
-            break;
-        case 4:
-            
-            cell.detailTextLabel.text = [self.faceFeatureDitionary objectForKey:GLASS];
-            break;
-        case 5:
-            
-            cell.detailTextLabel.text = [self.faceFeatureDitionary objectForKey:SUNGLASS];
-            break;
-        case 6:
-            
-            cell.detailTextLabel.text = [self.faceFeatureDitionary objectForKey:SMILE];
-            break;
-        case 7:
-            
-            cell.detailTextLabel.text = [self.faceFeatureDitionary objectForKey:BEARD];
-            break;
-        case 8:
-            
-            cell.detailTextLabel.text = [self.faceFeatureDitionary objectForKey:MOUTHOPEN];
-            break;
-        case 9:
-            
-            cell.detailTextLabel.text = [self.faceFeatureDitionary objectForKey:EYECLOSE];
-            break;
-        
             
         default:
             break;

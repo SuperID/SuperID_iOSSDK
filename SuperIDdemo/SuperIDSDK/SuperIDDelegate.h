@@ -85,7 +85,6 @@ typedef NS_ENUM(NSInteger, SIDUserAuthorizationState){
 };
 
 
-
 #pragma mark - SuperIDDelegate
 #import <Foundation/Foundation.h>
 
@@ -159,6 +158,7 @@ typedef NS_ENUM(NSInteger, SIDUserAuthorizationState){
  *  @param state SIDUserUpdateResponseState类型参数，用户状态定位
  */
 - (void)superID:(SuperID *)sender updateAppUidResponse:(SIDUserUpdateResponseState)state;
+
 
 
 @end
