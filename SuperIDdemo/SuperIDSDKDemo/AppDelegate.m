@@ -20,8 +20,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    //向SuperID SDK 注册：AppID 和 AppSecret
     [[SuperID sharedInstance]registerAppWithAppID:SIDAPPID withAppSecret:SIDAPPSECRET];
+    
+    //设置SuperID 的语言模式
     [SuperID setLanguageMode:SIDAutoMode];
+    
+    //设置SuperID Debugs 模式
     [SuperID setDebugMode:YES];
 
     return YES;
