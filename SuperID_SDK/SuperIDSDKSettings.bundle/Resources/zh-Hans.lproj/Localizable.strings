@@ -4,7 +4,7 @@
 "Superid_Title_Srvitem" = "一登服务协议";
 "Superid_Action_Edit" = "编辑";
 "Superid_Title_Auth" = "授权";
-"Superid_Tips_NetError" = "网络连接失败，请检查网络连通性";
+"Superid_Tips_NetError" = "连接失败，请检查网络连通性";
 "Superid_Action_Retry" = "重试";
 "Superid_Action_Back" = "返回";
 "Superid_Tips_PicNotExist" = "图片不存在";
@@ -26,12 +26,12 @@
 "Superid_Tips_ReScan" = "重刷一次";
 "Superid_Tips_LoginFail" = "登录失败";
 "Superid_Tips_CodeError" = "验证码有误";
-"Superid_Tips_MissingFace" = "当前人脸有误，请重试";
+"Superid_Tips_MissingFace" = "无法识别当前人脸，请退出刷脸后重试";
 "Superid_Aciton_ReBundle" = "重新绑定";
 "Superid_Tips_IdExist" = "此一登账号已被绑定";
 "Superid_Action_Sure" = "确定";
 "Superid_Tips_FaceCompareFail" = "人脸比对失败，请重试";
-"Superid_Tips_FirstStart" = "首次使用请输入短信验证码";
+"Superid_Tips_FirstStart" = "授权此应用请输入短信验证码";
 "Superid_Tips_CodeOverLimit" = "验证码请求超过限制次数";
 "Superid_Aciton_ReSend" = "重新发送";
 "Superid_Action_CodeSend" = "已发送(%ds)";
