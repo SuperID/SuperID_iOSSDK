@@ -12,7 +12,7 @@
 "Superid_Title_Srvitem" = "SuperID服務協議";
 "Superid_Action_Edit" = "編輯";
 "Superid_Title_Auth" = "授權";
-"Superid_Tips_NetError" = "網絡連接失敗，請檢查網絡連通性";
+"Superid_Tips_NetError" = "連接失敗，請檢查網絡連通性";
 "Superid_Action_Retry" = "重試";
 "Superid_Action_Back" = "返回";
 "Superid_Tips_PicNotExist" = "圖片不存在";
@@ -36,12 +36,12 @@
 "Superid_Tips_LoginFail" = "登入失敗";
 "Superid_Tips_CodeError" = "驗證碼有誤";
 "Superid_Tips_RequestCodeFail" = "驗證碼請求失敗";
-"Superid_Tips_MissingFace" = "當前人臉有誤，請重試";
+"Superid_Tips_MissingFace" = "無法識別當前人臉，請退出刷臉後重試";
 "Superid_Aciton_ReBundle" = "重新綁定";
 "Superid_Tips_IdExist" = "此SuperID賬號已被綁定";
 "Superid_Action_Sure" = "確定";
 "Superid_Tips_FaceCompareFail" = "人臉比對失敗，請重試";
-"Superid_Tips_FirstStart" = "首次使用請輸入短信驗證碼";
+"Superid_Tips_FirstStart" = "授權此應用請輸入短信驗證碼";
 "Superid_Tips_CodeOverLimit" = "驗證碼請求超過限制次數";
 "Superid_Aciton_ReSend" = "重新發送";
 "Superid_Action_CodeSend" = "已發送(%ds)";

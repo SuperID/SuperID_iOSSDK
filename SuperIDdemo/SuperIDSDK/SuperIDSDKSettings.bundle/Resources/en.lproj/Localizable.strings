@@ -37,7 +37,7 @@
 "Superid_Tips_ReScan" = "Try again";
 "Superid_Tips_LoginFail" = "Fail";
 "Superid_Tips_CodeError" = "Invalid SMS code";
-"Superid_Tips_MissingFace" = "Fail to virify your face";
+"Superid_Tips_MissingFace" = "Cannot recognize your face, Please retry";
 "Superid_Aciton_ReBundle" = "Record again";
 "Superid_Tips_IdExist" = "Account has linked with other User ID";
 "Superid_Action_Sure" = "Yes";
