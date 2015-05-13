@@ -28,10 +28,11 @@
 "Superid_Tips_AppTokenNull" = "缺少參數app_token";
 "Superid_Title_Login" = "SuperID刷臉登入";
 "Superid_Title_Bundle" = "SuperID人臉綁定";
-"Superid_Title_FaceInfo" = "SuperID人臉属性";
+"Superid_Title_FaceInfo" = "SuperID刷脸";
 "Superid_Tips_ActionNull" = "缺少參數action";
 "Superid_Tips_GetSuccess" = "獲取成功";
 "Superid_Tips_LoginSuccess" = "登入成功";
+"Superid_Tips_AuthSuccess" = "授權成功";
 "Superid_Tips_ReScan" = "再試一次";
 "Superid_Tips_LoginFail" = "登入失敗";
 "Superid_Tips_CodeError" = "驗證碼有誤";
@@ -40,7 +41,7 @@
 "Superid_Aciton_ReBundle" = "重新綁定";
 "Superid_Tips_IdExist" = "此SuperID賬號已被綁定";
 "Superid_Action_Sure" = "確定";
-"Superid_Tips_FaceCompareFail" = "人臉比對失敗，請重試";
+"Superid_Tips_FaceCompareFail" = "人臉比對失敗";
 "Superid_Tips_FirstStart" = "授權此應用請輸入短信驗證碼";
 "Superid_Tips_CodeOverLimit" = "驗證碼請求超過限制次數";
 "Superid_Aciton_ReSend" = "重新發送";
@@ -107,3 +108,18 @@
 "Superid_Tips_SecureEmailWarn" = "請您設置安全郵箱，提高安全級別";
 "Superid_Tips_NightMode" = "雙擊加亮";
 
+"Superid_Tips_GuideRegisterEr" = "登入失敗，請保持正臉姿勢重刷壹次";
+
+"Superid_Tips_GuideRegisterBundle" = "您已兩次登入失敗，請在光亮的環境下，重新綁定人臉";
+
+"Superid_Tips_FaceRebundleFreeze"="帳號凍結中，請解除凍結後重試";
+
+"Superid_Tips_FaceRebundleEr"="提交失敗，請退出刷臉後重試";
+
+"Superid_Tips_RebundleApplication" = "人臉已提交審核，請您留意短信通知";
+
+"Superid_Tips_Rebundling" = "人臉正在審核中，請您留意短信通知";
+
+"Superid_Tips_BundleMissingFace" = "無法識別當前人臉";
+
+"Superid_Tips_BundleMissingFaceOperate" = "重新刷臉";
