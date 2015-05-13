@@ -19,10 +19,11 @@
 "Superid_Tips_AppTokenNull" = "缺少参数app_token";
 "Superid_Title_Login" = "一登刷脸登录";
 "Superid_Title_Bundle" = "一登人脸绑定";
-"Superid_Title_FaceInfo" = "一登人脸属性";
+"Superid_Title_FaceInfo" = "一登刷脸";
 "Superid_Tips_ActionNull" = "缺少参数action";
 "Superid_Tips_GetSuccess" = "获取成功";
 "Superid_Tips_LoginSuccess" = "登录成功";
+"Superid_Tips_AuthSuccess" = "授权成功";
 "Superid_Tips_ReScan" = "重刷一次";
 "Superid_Tips_LoginFail" = "登录失败";
 "Superid_Tips_CodeError" = "验证码有误";
@@ -30,7 +31,7 @@
 "Superid_Aciton_ReBundle" = "重新绑定";
 "Superid_Tips_IdExist" = "此一登账号已被绑定";
 "Superid_Action_Sure" = "确定";
-"Superid_Tips_FaceCompareFail" = "人脸比对失败，请重试";
+"Superid_Tips_FaceCompareFail" = "人脸比对失败";
 "Superid_Tips_FirstStart" = "授权此应用请输入短信验证码";
 "Superid_Tips_CodeOverLimit" = "验证码请求超过限制次数";
 "Superid_Aciton_ReSend" = "重新发送";
@@ -95,3 +96,20 @@
 "Superid_Tips_AccountHasBeenFrozen" = "当前帐号已被冻结";
 "Superid_Tips_SecureEmailTextTips" = "安全邮箱设置后不能修改";
 "Superid_Tips_NightMode" = "双击加亮";
+
+"Superid_Tips_GuideRegisterEr" = "登录失败，请保持正脸姿势重刷一次";
+
+"Superid_Tips_GuideRegisterBundle" = "您已两次登录失败，请在光亮的环境下，重新绑定人脸";
+
+"Superid_Tips_FaceRebundleFreeze"="帐号冻结中，请解除冻结后重试";
+
+"Superid_Tips_FaceRebundleEr"="提交失败，请退出刷脸后重试";
+
+"Superid_Tips_RebundleApplication" = "人脸已提交审核，请您留意短信通知";
+
+"Superid_Tips_Rebundling" = "人脸正在审核中，请您留意短信通知";
+
+"Superid_Tips_BundleMissingFace" = "无法识别当前人脸";
+
+"Superid_Tips_BundleMissingFaceOperate" = "重新刷脸";
+

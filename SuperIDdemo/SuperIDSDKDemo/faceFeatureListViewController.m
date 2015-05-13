@@ -11,10 +11,9 @@
 #import "PubFunctions.h"
 
 
-@interface faceFeatureListViewController(){
-    
-    NSArray *BundingArray;
-}
+@interface faceFeatureListViewController()
+
+@property (nonatomic, weak)NSArray *featureKeyArray;
 
 @end
 @implementation faceFeatureListViewController
@@ -29,6 +28,7 @@
     self.tableView.backgroundColor = Superid_Demo_Artboard;
     self.navigationItem.title=@"人脸信息识别";
     self.faceFeatureDitionary = [[NSUserDefaults standardUserDefaults]objectForKey:@"FaceFeature"];
+    self.featureKeyArray = [self.faceFeatureDitionary allKeys];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -44,7 +44,7 @@
     
     [PubFunctions setExtraCellLineHidden:self.tableView];
     
-    BundingArray = [[NSMutableArray alloc]initWithObjects:@"眼镜",@"性别",@"微笑",nil];
+    NSLog(@"FaceFeatureDictionary = %@",self.faceFeatureDitionary);
 
 }
 
@@ -86,48 +86,49 @@
     UITableViewCell *cell = nil;
     
     cell =  [self.tableView dequeueReusableCellWithIdentifier:@"faceFeatureCell" forIndexPath:indexPath];
-
-    cell.textLabel.text = [BundingArray objectAtIndex:indexPath.row];
-    switch (indexPath.row) {
-        case 0:
-            
-            if ([[self.faceFeatureDitionary objectForKey:@"Eyeglasses"]boolValue] == YES) {
-                
-                cell.detailTextLabel.text = @"有戴";
-                
-            }else{
-                
-                cell.detailTextLabel.text = @"没戴";
-            }
-            
-            break;
-        case 1:
-            
-            if ([[self.faceFeatureDitionary objectForKey:@"Male"]boolValue] == YES) {
-                
-                cell.detailTextLabel.text = @"男";
-                
-            }else{
-                
-                cell.detailTextLabel.text = @"女";
-            }
-            
-            break;
-        case 2:
-            
-            if ([[self.faceFeatureDitionary objectForKey:@"Smiling"]boolValue] == YES) {
-                
-                cell.detailTextLabel.text = @"有";
-                
-            }else{
-                
-                cell.detailTextLabel.text = @"无";
-            }
-            break;
-            
-        default:
-            break;
-    }
+    
+    cell.textLabel.text = [PubFunctions transformFeatureKeyToChinese:[self.featureKeyArray objectAtIndex:indexPath.row]];
+    cell.detailTextLabel.text = [self.faceFeatureDitionary objectForKey:[self.featureKeyArray objectAtIndex:indexPath.row]];
+//    switch (indexPath.row) {
+//        case 0:
+//            
+//            if ([[self.faceFeatureDitionary objectForKey:@"Eyeglasses"]boolValue] == YES) {
+//                
+//                cell.detailTextLabel.text = @"有戴";
+//                
+//            }else{
+//                
+//                cell.detailTextLabel.text = @"没戴";
+//            }
+//            
+//            break;
+//        case 1:
+//            
+//            if ([[self.faceFeatureDitionary objectForKey:@"Male"]boolValue] == YES) {
+//                
+//                cell.detailTextLabel.text = @"男";
+//                
+//            }else{
+//                
+//                cell.detailTextLabel.text = @"女";
+//            }
+//            
+//            break;
+//        case 2:
+//            
+//            if ([[self.faceFeatureDitionary objectForKey:@"Smiling"]boolValue] == YES) {
+//                
+//                cell.detailTextLabel.text = @"有";
+//                
+//            }else{
+//                
+//                cell.detailTextLabel.text = @"无";
+//            }
+//            break;
+//            
+//        default:
+//            break;
+//    }
     
     return cell;
     

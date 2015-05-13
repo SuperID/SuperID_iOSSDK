@@ -21,10 +21,10 @@
     [self configureFaceFeatureViewWithDuration:10.0f withFrameWidth:320 high:320];
     self.view.backgroundColor = [UIColor blackColor];
     
-    UIImageView *musicView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height*0.435)];
-    musicView.center = self.view.center;
-    musicView.image = [UIImage imageNamed:@"music"];
-    [self.view addSubview:musicView];
+    UIImageView *BGView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height*0.435)];
+    BGView.center = self.view.center;
+    BGView.image = [UIImage imageNamed:@"music"];
+    [self.view addSubview:BGView];
 
 }
 
@@ -93,7 +93,7 @@
         
         if (featureInfo) {
             
-            [[NSUserDefaults standardUserDefaults]setObject:featureInfo forKey:@"FaceFeature"];
+            [[NSUserDefaults standardUserDefaults]setObject:[PubFunctions filterFaceFeaturesData:featureInfo] forKey:@"FaceFeature"];
             [[NSUserDefaults standardUserDefaults]synchronize];
             [[NSNotificationCenter defaultCenter] postNotificationName:GETFACEFEATURE object:GETFACEFEATUREDONE userInfo:nil];
             [self dismissViewControllerAnimated:YES completion:nil];

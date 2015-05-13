@@ -14,7 +14,8 @@
 + (CALayer *)AddBorderLayer:(UIColor *)borderColor withWidth:(float)width onY:(float)pointY;
 + (void)setupLoginViewUIDisplay:(UIViewController *)vc;
 + (void *)intialTextField:(UITextField *)textField;
-+ (NSDictionary *)filterAdvancedFaceFeaturesData:(NSDictionary *)originalData;
++ (NSDictionary *)filterFaceFeaturesData:(NSDictionary *)originalData;
 + (UIImage *)blurryImage:(UIImage *)image withBlurLevel:(CGFloat)blur;
++ (NSString *)transformFeatureKeyToChinese:(NSString *)keyStr;
 
 @end

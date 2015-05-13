@@ -48,17 +48,15 @@
     return nil;
 }
 
-+ (NSDictionary *)filterAdvancedFaceFeaturesData:(NSDictionary *)originalData{
++(NSDictionary *)filterFaceFeaturesData:(NSDictionary *)originalData{
     
     NSMutableDictionary *faceFeatureDitionary = [[NSMutableDictionary alloc]init];
     NSString *gender;
-    NSNumber *ageNumber = [originalData objectForKey:@"sex"];
-    if ([ageNumber isEqualToNumber:@1]) {
+    NSDictionary *ageDict = [originalData objectForKey:@"male"];
+    if ([[ageDict objectForKey:@"result"]  isEqualToNumber:@1]) {
         
         gender = @"男";
-        
     }else{
-        
         gender = @"女";
         
     }
@@ -68,14 +66,14 @@
     NSString *age = [numberFormatter stringFromNumber:[originalData objectForKey:@"age"]];
     [faceFeatureDitionary setObject:age forKey:AGE];
     
-    NSNumber *beauty =[originalData objectForKey:@"beauty"];
-    float beautyValue = [beauty floatValue]*100;
-    NSString *beautyString=[NSString stringWithFormat:@"%.2f",beautyValue];
-    [faceFeatureDitionary setObject:beautyString forKey:BEAUTY];
+//    NSDictionary *beautyDict =[originalData objectForKey:@"attractive"];
+//    int beautyValue = (int)([[beautyDict objectForKey:@"score"] floatValue]*100);
+//    NSString *beautyString=[NSString stringWithFormat:@"%d",beautyValue];
+//    [faceFeatureDitionary setObject:beautyString forKey:BEAUTY];
     
-    NSNumber *glassNumber = [originalData objectForKey:@"glasses"];
+    NSDictionary *glassDict = [originalData objectForKey:@"eyeglasses"];
     NSString *glassString;
-    if ([glassNumber isEqualToNumber:@1]) {
+    if ([[glassDict objectForKey:@"result"] isEqualToNumber:@1]) {
         
         glassString = @"有戴";
         
@@ -86,8 +84,8 @@
     [faceFeatureDitionary setObject:glassString forKey:GLASS];
     
     NSString *sunglassString;
-    NSNumber *sunglassValue = [originalData objectForKey:@"sunglasses"];
-    if ([sunglassValue  isEqualToNumber: @1]) {
+    NSDictionary *sunglassDict = [originalData objectForKey:@"sunglasses"];
+    if ([[sunglassDict objectForKey:@"result"]  isEqualToNumber: @1]) {
         
         sunglassString = @"有戴";
         
@@ -98,43 +96,82 @@
     }
     [faceFeatureDitionary setObject:sunglassString forKey:SUNGLASS];
     
-    NSString *smileString = [NSString stringWithFormat:@"%.2f",[[originalData objectForKey:@"smile"] floatValue]];
+    NSDictionary *smailDict = [originalData objectForKey:@"smiling"];
+    
+    int smileValue = (int)([[smailDict objectForKey:@"score"] floatValue]*100);
+    NSLog(@"smileValue = %d",smileValue);
+    NSString *smileString = [NSString stringWithFormat:@"%d",smileValue];
     [faceFeatureDitionary setObject:smileString forKey:SMILE];
-
-    NSString *beardString = [NSString stringWithFormat:@"%.2f%%",[[originalData objectForKey:@"beard"] floatValue]*100];
+    
+    NSDictionary *mustacheDict = [originalData objectForKey:@"mustache"];
+    NSString *beardString = [NSString stringWithFormat:@"%.2f%%",[[mustacheDict objectForKey:@"score"] floatValue]*100];
     [faceFeatureDitionary setObject:beardString forKey:BEARD];
-
-    NSString *mouthOpenString = [NSString stringWithFormat:@"%.2f%%",[[originalData objectForKey:@"mouth_open_wide"] floatValue]*100];
-    [faceFeatureDitionary setObject:mouthOpenString forKey:MOUTHOPEN];
-
-    NSString *eyeCloseString = [NSString stringWithFormat:@"%.2f%%",[[originalData objectForKey:@"eye_closed"] floatValue]*100];
-    [faceFeatureDitionary setObject:eyeCloseString forKey:EYECLOSE];
     
-    NSDictionary *emotion = [originalData objectForKey:@"emotion"];
-    NSArray *keys  =    [emotion allKeys];
-    NSArray *values =   [emotion allValues];
-    double maximumValues=0;
-    NSString *keyString = [[NSString alloc]init];
+//    NSDictionary *mouthOpenDict = [originalData objectForKey:@"mouth_open"];
+//    NSString *mouthOpenString = [NSString stringWithFormat:@"%.2f%%",[[mouthOpenDict objectForKey:@"score"] floatValue]*100];
+//    [faceFeatureDitionary setObject:mouthOpenString forKey:MOUTHOPEN];
+//    
+//    NSDictionary *eyeCloseDict = [originalData objectForKey:@"blink"];
+//    NSString *eyeCloseString = [NSString stringWithFormat:@"%.2f%%",[[eyeCloseDict objectForKey:@"score"] floatValue]*100];
+//    [faceFeatureDitionary setObject:eyeCloseString forKey:EYECLOSE];
     
-    for (int i = 0; i<[values count]; i++) {
-        
-        NSNumber *value = [values objectAtIndex:i];
-        double valueInt = [value doubleValue];
-        if (valueInt>maximumValues) {
-            
-            maximumValues=valueInt;
-            keyString = [keys objectAtIndex:i];
-
-        }
-    }
-    NSMutableDictionary *emotionDitionary = [[NSMutableDictionary alloc]initWithObjects:@[@"愉快",@"愤怒",@"平静",@"惊讶",@"困惑",@"悲伤",@"恐惧"] forKeys:@[@"happy",@"angry",@"calm",@"surprised",@"confused",@"sad",@"disgust"]];
-    NSString *emotionTag = [emotionDitionary objectForKey:keyString];
-    NSString *emotionValue = [NSString stringWithFormat:@"(%.2f%%)",maximumValues*100];
-    [faceFeatureDitionary setObject:emotionTag forKey:EMOTION];
-    [faceFeatureDitionary setObject:emotionValue forKey:EMOTIONVALUE];
+//    NSDictionary *emotion = [originalData objectForKey:@"emotions"];
+//    NSArray *keys  =    [emotion allKeys];
+//    NSArray *values =   [emotion allValues];
+//    double maximumValues=0;
+//    NSString *keyString = [[NSString alloc]init];
+//    
+//    for (int i = 0; i<[values count]; i++) {
+//        
+//        NSNumber *value = [values objectAtIndex:i];
+//        double valueInt = [value doubleValue];
+//        if (valueInt>maximumValues) {
+//            
+//            maximumValues=valueInt;
+//            keyString = [keys objectAtIndex:i];
+//            
+//        }
+//    }
+//    NSMutableDictionary *emotionDitionary = [[NSMutableDictionary alloc]initWithObjects:@[@"愉快",@"愤怒",@"平静",@"惊讶",@"困惑",@"悲伤",@"恐惧"] forKeys:@[@"happy",@"angry",@"calm",@"surprised",@"confused",@"sad",@"disgust"]];
+//    NSString *emotionTag = [emotionDitionary objectForKey:keyString];
+//    NSString *emotionValue = [NSString stringWithFormat:@"(%.2f%%)",maximumValues*100];
+//    NSLog(@"emotionTag = %@ emotionValue = %@",emotionTag,emotionValue);
+//    [faceFeatureDitionary setObject:emotionTag forKey:EMOTION];
+//    [faceFeatureDitionary setObject:emotionValue forKey:EMOTIONVALUE];
     
     return faceFeatureDitionary;
     
+}
+
++ (NSString *)transformFeatureKeyToChinese:(NSString *)keyStr{
+    
+    NSString *str;
+    
+    if ([keyStr isEqualToString:@"age"]) {
+        
+        str = @"年龄";
+        
+    }else if ([keyStr isEqualToString:@"beard"]){
+        
+        str = @"胡须密度";
+        
+    }else if ([keyStr isEqualToString:@"gender"]){
+        
+        str = @"性别";
+        
+    }else if ([keyStr isEqualToString:@"glass"]){
+        
+        str = @"眼镜";
+        
+    }else if ([keyStr isEqualToString:@"smile"]){
+        
+        str = @"微笑值";
+        
+    }else if ([keyStr isEqualToString:@"sunGlass"]){
+        
+        str = @"太阳镜";
+    }
+    return str;
 }
 
 

@@ -395,9 +395,9 @@
             
             NSLog(@"featureInfo = %@",featureInfo);
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            faceFeatureListViewController *personView= [storyboard instantiateViewControllerWithIdentifier:@"faceFeatureList"];
-            [[NSUserDefaults standardUserDefaults]setObject:featureInfo forKey:@"FaceFeature"];
-            [self.navigationController pushViewController:personView animated:NO];
+            faceFeatureListViewController *featureListView= [storyboard instantiateViewControllerWithIdentifier:@"faceFeatureList"];
+            [[NSUserDefaults standardUserDefaults]setObject:[PubFunctions filterFaceFeaturesData:featureInfo] forKey:@"FaceFeature"];
+            [self.navigationController pushViewController:featureListView animated:NO];
             
         }
         
