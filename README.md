@@ -1,3 +1,16 @@
+# 一登SDK - 一切只为简单登录
+
+[![Version](https://img.shields.io/cocoapods/v/SuperID.svg?style=flat)](http://cocoapods.org/pods/SuperID)
+[![License](https://img.shields.io/cocoapods/l/SuperID.svg?style=flat)](http://cocoapods.org/pods/SuperID)
+[![Platform](https://img.shields.io/cocoapods/p/SuperID.svg?style=flat)](http://cocoapods.org/pods/SuperID)
+
+一登 SDK 为应用提供了便捷的刷脸登录模式。通过一登账号体系，移动终端用户可快速登录开发者应用。同时，一登SDK提供了人脸属性高级功能，让移动开发者可以基于人脸属性，为应用做更精准的数据推送。
+
+- 获取用户状态：刷脸获取用户颜值情绪等当前状态信息
+- 进行精准推荐：基于用户属性和状态进行精准内容推荐
+- 激发分享欲望：精选内容加上状态标签让用户乐于分享
+
+
 # 一登SDK使用流程
 
 1. 在[官网首页](http://superid.me)点击【注册】完成一登开发者注册；
