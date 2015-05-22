@@ -11,11 +11,9 @@
 
 
 
-@interface SuperID : NSObject{
-    
-    id <SuperIDDelegate> deleage;
-    
-}
+@interface SuperID : NSObject
+
+
 
 /** SDK 委托对象 */
 @property(assign,nonatomic) id<SuperIDDelegate> delegate;
@@ -42,7 +40,7 @@
 - (void)registerAppWithAppID:(NSString *)appID withAppSecret:(NSString *)appSecret;
 
 
-
++ (NSDictionary *)getSDKVersion;
 /**
  *  SuperID的类方法，用于设置SDK在开发者应用中的语言模式，分自动模式、英文模式、简体中文模式、繁体中文模式。
  *
@@ -112,8 +110,7 @@
  */
 - (instancetype)obtainFaceFeatureViewControllerWithError:(NSError **)error;
 
-
-
+- (instancetype)obtainAdvancedFaceFeatureViewControllerWithError:(NSError **)error;
 /**
  *  用户取消当前应用账号与一登账号的授权接口
  */
@@ -165,7 +162,7 @@
  */
 - (void)uploadUserBehaviourEventDataWithActionTag:(NSString *)aTag attributes:(NSDictionary *)attributes actions:(NSDictionary *)actions;
 
-
+- (void)updateSuperIDAccountInfoWith:(NSDictionary *)info avatar:(NSData *)avatar;
 
 
 @end
