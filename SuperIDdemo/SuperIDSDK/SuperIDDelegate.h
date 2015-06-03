@@ -84,6 +84,14 @@ typedef NS_ENUM(NSInteger, SIDUserAuthorizationState){
     SIDQueryUserAuthorizationFail,
 };
 
+typedef NS_ENUM(NSInteger, SIDUpdateAccountState){
+    
+    SIDAccountUpdateSucceed,
+    SIDAccountUpdateFail,
+    SIDAccountUpdate_accessTokenInvalid,
+    SIDAccountUpdate_accountBeenFrozen,
+    SIDAccountUpdate_accessTokenExpired,
+};
 
 #pragma mark - SuperIDDelegate
 #import <Foundation/Foundation.h>

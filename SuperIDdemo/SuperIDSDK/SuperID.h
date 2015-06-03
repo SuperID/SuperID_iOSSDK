@@ -11,11 +11,9 @@
 
 
 
-@interface SuperID : NSObject{
-    
-    id <SuperIDDelegate> deleage;
-    
-}
+@interface SuperID : NSObject
+
+
 
 /** SDK 委托对象 */
 @property(assign,nonatomic) id<SuperIDDelegate> delegate;
@@ -111,7 +109,6 @@
  *  @return 一登人脸信息VC的实例
  */
 - (instancetype)obtainFaceFeatureViewControllerWithError:(NSError **)error;
-
 
 
 /**
