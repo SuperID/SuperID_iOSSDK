@@ -167,6 +167,6 @@ typedef NS_ENUM(NSInteger, SIDUpdateAccountState){
  */
 - (void)superID:(SuperID *)sender updateAppUidResponse:(SIDUserUpdateResponseState)state;
 
-- (void)superID:(SuperID *)sender updateSuperIDAccountResponse:(SIDUpdateAccountState)state updateInfo:(NSDictionary *)info;
+
 
 @end
