@@ -30,6 +30,13 @@
 
 
 /**
+ *  SuperID的类方法，用于获取当前SDK的版本信息
+ */
++ (NSDictionary *)getSDKVersion;
+
+
+
+/**
  *  SuperID的实例方法，向SDK注册第三方应用。
  *  需要在每次启动第三方应用程序时调用。
  *  @param appID     开发者创建应用的应用ID
