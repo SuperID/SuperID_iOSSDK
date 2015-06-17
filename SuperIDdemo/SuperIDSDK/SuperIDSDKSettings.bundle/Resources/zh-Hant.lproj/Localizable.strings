@@ -123,3 +123,7 @@
 "Superid_Tips_BundleMissingFace" = "無法識別當前人臉";
 
 "Superid_Tips_BundleMissingFaceOperate" = "重新刷臉";
+
+"Superid_Aciton_KeyboardBarSubmit" = "確定";
+
+"Superid_Aciton_KeyboardBarReturn" = "下壹項";
