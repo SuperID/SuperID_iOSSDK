@@ -119,3 +119,7 @@
 
 "Superid_Tips_BundleMissingFace" = "Can not detect face";
 "Superid_Tips_BundleMissingFaceOperate" = "Retry";
+
+"Superid_Aciton_KeyboardBarSubmit" = "Submit";
+
+"Superid_Aciton_KeyboardBarReturn" = "Next";
